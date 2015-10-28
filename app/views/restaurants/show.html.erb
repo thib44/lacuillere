@@ -7,7 +7,7 @@
 
 <p>
   <strong>Adress:</strong>
-  <%= @restaurant.adress %>
+  <%= @restaurant.address %>
 </p>
 
 <p>
@@ -19,6 +19,15 @@
   <strong>Category:</strong>
   <%= @restaurant.category %>
 </p>
+
+<p>
+  <strong>Review:</strong>
+  <ul>
+    <% @restaurant.reviews.each do |review| %>
+    <li><%= review.content %> <%= review.rating %> </li>
+
+    <% end %>
+  </ul>
 
 <%= link_to 'Edit', edit_restaurant_path(@restaurant) %> |
 <%= link_to 'Back', restaurants_path %>
